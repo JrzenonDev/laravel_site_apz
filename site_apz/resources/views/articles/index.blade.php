@@ -5,6 +5,7 @@
         <th>Edit</th>
         <th>Delete</th>
         <th>Title</th>
+        <td>Author</td>
     </tr>
     @foreach ($articles as $article)
         <tr>
@@ -15,6 +16,7 @@
                 {!! Form::close() !!}
             </td>
             <td>{!! link_to_route('articles.show', $article->title, $article->id) !!}</td>
+            <td>{!! $article->author->name !!}</td>
         </tr>
     @endforeach
 </table>
